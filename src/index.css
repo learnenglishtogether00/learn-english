@@ -1,4 +1,7 @@
 /* custom table */
+a {
+  text-decoration: none;
+}
 
 .MuiTableRow-root:hover .MuiTableCell-body {
   /* color: #5dade2; */

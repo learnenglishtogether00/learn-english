@@ -5,7 +5,7 @@ import Grid from "@material-ui/core/Grid";
 import Card from "@material-ui/core/Card";
 import CardContent from "@material-ui/core/CardContent";
 import Button from "@material-ui/core/Button";
-
+import { Link } from "react-router-dom";
 import { COMPLETE_TEST_STORAGE_KEY } from "../../../enums";
 import {
   getItemLocalStorage,
@@ -93,9 +93,12 @@ const MiniTestModalContent = (props) => {
                 Mini Test
               </Typography>
               <Typography variant="subtitle1">Thực hiện bài Test</Typography>
-              <Typography variant="button" className={classes.actionButton}>
-                Let Go
-              </Typography>
+
+              <Link to={`/mini-test-exam?test=${testDetail.id}`}>
+                <Typography variant="button" className={classes.actionButton}>
+                  Let Go
+                </Typography>
+              </Link>
             </CardContent>
           </Card>
         </Grid>
