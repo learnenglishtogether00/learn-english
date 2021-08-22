@@ -111,9 +111,11 @@ const MiniTestModalContent = (props) => {
               <Typography variant="subtitle1">
                 Rèn luyện Listening Skill
               </Typography>
-              <Typography variant="button" className={classes.actionButton}>
-                Let Go
-              </Typography>
+              <Link to={`/mini-test-listening?test=${testDetail.id}`}>
+                <Typography variant="button" className={classes.actionButton}>
+                  Let Go
+                </Typography>
+              </Link>
             </CardContent>
           </Card>
         </Grid>

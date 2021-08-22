@@ -10,6 +10,7 @@ import { MINI_TEST_DATA } from "../../db/data";
 import { formatTestData } from "../../utils";
 import DocumentTesting from "../../components/common/TestingComponents/DocumentTesting";
 import AudioTesting from "../../components/common/TestingComponents/AudioTesting";
+import FormTesting from "../../components/common/TestingComponents/FormTesting";
 
 const useStyles = makeStyles({
   homePageLink: {
@@ -42,7 +43,7 @@ const TestPage = () => {
             {`Mini Test - ${formattedTest.name}`}
           </Typography>
         </Grid>
-        <Grid item xs={2}>
+        <Grid item xs={1}>
           <Link to={`/`}>
             <Typography
               variant="h6"
@@ -58,7 +59,7 @@ const TestPage = () => {
       <Grid container justifyContent="space-between" spacing={3}>
         <Grid item xs={8}>
           <Paper elevation={3} classes={{ root: classes.paperWrap }}>
-            <DocumentTesting testData={formattedTest} />
+            <DocumentTesting docURL={formattedTest.docURL} />
           </Paper>
         </Grid>
         <Grid item xs={4}>
@@ -69,10 +70,9 @@ const TestPage = () => {
               </Paper>
             </Grid>
             <Grid item xs={12}>
-              <Paper
-                elevation={3}
-                classes={{ root: classes.paperWrap }}
-              ></Paper>
+              <Paper elevation={3} classes={{ root: classes.paperWrap }}>
+                <FormTesting formURL={formattedTest.formURL} />
+              </Paper>
             </Grid>
           </Grid>
         </Grid>
