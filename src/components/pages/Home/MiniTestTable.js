@@ -17,7 +17,7 @@ const HEADERS_DATA = [
   },
   {
     key: "updatedDate",
-    text: "Ngày đăng tải",
+    text: "Ngày đăng",
   },
 ];
 

@@ -17,7 +17,7 @@ const HEADERS_DATA = [
   },
   {
     key: "updatedDate",
-    text: "Ngày đăng tải",
+    text: "Ngày đăng",
   },
 ];
 
@@ -60,7 +60,7 @@ const DocumentTable = () => {
         headers={HEADERS_DATA}
         title={"Tài Liệu"}
         subTitle={
-          "Bạn có thể tìm thấy các tại liệu chia sẻ trên nhóm ở đây. Tài liệu chủ yếu tập trung vào việc ôn luyện thi TOEIC. Cũng như những nội dung hữu ích về Tiếng Anh"
+          "Bạn có thể tìm thấy các tài liệu chia sẻ trên nhóm ở đây. Tài liệu chủ yếu tập trung vào việc ôn luyện thi TOEIC. Cũng như những nội dung hữu ích về Tiếng Anh"
         }
         handleClickRow={handleClickRow}
       />

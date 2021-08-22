@@ -57,12 +57,12 @@ const TestPage = () => {
       </Grid>
 
       <Grid container justifyContent="space-between" spacing={3}>
-        <Grid item xs={8}>
+        <Grid item xs={7}>
           <Paper elevation={3} classes={{ root: classes.paperWrap }}>
             <DocumentTesting docURL={formattedTest.docURL} />
           </Paper>
         </Grid>
-        <Grid item xs={4}>
+        <Grid item xs={5}>
           <Grid container spacing={3}>
             <Grid item xs={12}>
               <Paper elevation={3} classes={{ root: classes.paperWrap }}>
