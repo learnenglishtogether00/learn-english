@@ -6,6 +6,7 @@ import HomePage from "./pages/HomePage";
 const Router = () => {
   return (
     <Switch>
+      <Route exact path="/" component={HomePage} />
       <Route path="/learn-english" component={HomePage} />
     </Switch>
   );

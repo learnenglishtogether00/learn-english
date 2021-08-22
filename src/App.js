@@ -10,8 +10,8 @@ import Router from "./Route";
 
 const useStyles = makeStyles({
   maxWidthLg: {
-    paddingLeft: 50,
-    paddingRight: 50,
+    paddingLeft: 150,
+    paddingRight: 150,
     paddingTop: 20,
   },
 });
