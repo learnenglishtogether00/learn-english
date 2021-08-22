@@ -53,14 +53,14 @@ const useStyles = makeStyles({
 });
 
 const DocumentModalContent = (props) => {
-  const { testDetail, handleCloseModal } = props;
+  const { documentDetail, handleCloseModal } = props;
   const classes = useStyles();
 
   const handleCompleteTest = () => {
     const completeTestStr = getItemLocalStorage(COMPLETE_TEST_STORAGE_KEY);
     let completeTestIds = completeTestStr ? completeTestStr.split("/") : [];
 
-    completeTestIds.push(testDetail.id);
+    completeTestIds.push(documentDetail.id);
     const updatedCompleteTests = completeTestIds.join("/");
     setItemLocalStorage(COMPLETE_TEST_STORAGE_KEY, updatedCompleteTests);
 
@@ -74,7 +74,7 @@ const DocumentModalContent = (props) => {
         id="transition-modal-title"
         className={classes.modalTitle}
       >
-        {testDetail?.name}
+        {documentDetail?.name}
       </Typography>
       <Typography variant="subtitle1" id="transition-modal-description">
         Hãy chọn các chế độ bên dưới, nếu bạn đã thực hiện bài test hãy bấm nút
@@ -96,7 +96,7 @@ const DocumentModalContent = (props) => {
                 Nhận nút bên dưới để xem tài liệu.
               </Typography>
 
-              <Link to={`/mini-test-exam?test=${testDetail.id}`}>
+              <Link to={`/document?doc=${documentDetail.id}`}>
                 <Typography variant="button" className={classes.actionButton}>
                   Let Go
                 </Typography>
@@ -110,7 +110,7 @@ const DocumentModalContent = (props) => {
             variant="contained"
             className={classes.completeButton}
             onClick={handleCompleteTest}
-            disabled={checkIsTestComplete(testDetail.id)}
+            disabled={checkIsTestComplete(documentDetail.id)}
           >
             Hoàn Thành
           </Button>
