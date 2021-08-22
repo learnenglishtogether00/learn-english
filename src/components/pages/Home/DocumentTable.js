@@ -40,7 +40,6 @@ const DocumentTable = () => {
   const [currentRow, setCurrentRow] = useState();
 
   const handleClickRow = (row) => {
-    console.log({ row });
     setCurrentRow(row);
     setVisibleDetailModal(true);
   };
@@ -81,7 +80,7 @@ const DocumentTable = () => {
           <Paper elevation={3} classes={{ root: classes.paperWrap }}>
             {currentRow && (
               <DocumentModalContent
-                testDetail={currentRow}
+                documentDetail={currentRow}
                 handleCloseModal={handleCloseModal}
               />
             )}

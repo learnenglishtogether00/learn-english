@@ -40,7 +40,6 @@ const MiniTestTable = () => {
   const [currentRow, setCurrentRow] = useState();
 
   const handleClickRow = (row) => {
-    console.log({ row });
     setCurrentRow(row);
     setVisibleDetailModal(true);
   };
