@@ -9,6 +9,7 @@ import { useQuery } from "../../utils/customHooks";
 import { MINI_TEST_DATA } from "../../db/data";
 import { formatTestData } from "../../utils";
 import DocumentTesting from "../../components/common/TestingComponents/DocumentTesting";
+import AudioTesting from "../../components/common/TestingComponents/AudioTesting";
 
 const useStyles = makeStyles({
   homePageLink: {
@@ -20,7 +21,7 @@ const useStyles = makeStyles({
       cursor: "pointer",
     },
   },
-  docWrap: {
+  paperWrap: {
     padding: 20,
   },
 });
@@ -56,9 +57,24 @@ const TestPage = () => {
 
       <Grid container justifyContent="space-between" spacing={3}>
         <Grid item xs={8}>
-          <Paper elevation={3} classes={{ root: classes.docWrap }}>
+          <Paper elevation={3} classes={{ root: classes.paperWrap }}>
             <DocumentTesting testData={formattedTest} />
           </Paper>
+        </Grid>
+        <Grid item xs={4}>
+          <Grid container spacing={3}>
+            <Grid item xs={12}>
+              <Paper elevation={3} classes={{ root: classes.paperWrap }}>
+                <AudioTesting audioURL={formattedTest.fullAudioURL} />
+              </Paper>
+            </Grid>
+            <Grid item xs={12}>
+              <Paper
+                elevation={3}
+                classes={{ root: classes.paperWrap }}
+              ></Paper>
+            </Grid>
+          </Grid>
         </Grid>
       </Grid>
     </Fragment>
