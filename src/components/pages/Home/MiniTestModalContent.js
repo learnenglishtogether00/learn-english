@@ -77,8 +77,8 @@ const MiniTestModalContent = (props) => {
         {testDetail?.name}
       </Typography>
       <Typography variant="subtitle1" id="transition-modal-description">
-        Hãy chọn các chế độ bên dưới, nếu bạn đã thực hiện bài test hãy bấm hoàn
-        tất.
+        Hãy chọn các chế độ bên dưới, nếu bạn đã thực hiện bài test hãy bấm nút
+        "Hoàn Thành" bên dưới (để đóng cửa sổ hãy click ra vùng màu tối).
       </Typography>
       <Grid
         container

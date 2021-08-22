@@ -8,6 +8,7 @@ import Paper from "@material-ui/core/Paper";
 import DataTable from "../../common/DataTable";
 import MiniTestModalContent from "./MiniTestModalContent";
 import { MINI_TEST_DATA } from "../../../db/data";
+import { sortTestDataByDate } from "../../../utils";
 
 const HEADERS_DATA = [
   {
@@ -49,10 +50,14 @@ const MiniTestTable = () => {
     setVisibleDetailModal(false);
   };
 
+  const formatData = (data) => {
+    return sortTestDataByDate(data);
+  };
+
   return (
     <Fragment>
       <DataTable
-        rows={MINI_TEST_DATA}
+        rows={formatData(MINI_TEST_DATA)}
         headers={HEADERS_DATA}
         title={"Mini Test"}
         subTitle={

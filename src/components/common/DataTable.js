@@ -78,7 +78,7 @@ const DataTable = (props) => {
                 headers.map((header, index) => (
                   <TableCell key={index}>{header.text}</TableCell>
                 ))}
-              <TableCell align={"center"}>Status</TableCell>
+              <TableCell align={"center"}>Trạng Thái</TableCell>
             </TableRow>
           </TableHead>
           <TableBody>
