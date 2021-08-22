@@ -1,23 +1,32 @@
-import logo from "./logo.svg";
-import "./App.css";
+import React from "react";
+import { BrowserRouter } from "react-router-dom";
+import { makeStyles } from "@material-ui/core/styles";
+import CssBaseline from "@material-ui/core/CssBaseline";
+import Container from "@material-ui/core/Container";
 
-function App() {
+import Router from "./Route";
+
+const useStyles = makeStyles({
+  maxWidthLg: {
+    paddingLeft: 150,
+    paddingRight: 150,
+    paddingTop: 20,
+  },
+});
+
+const App = () => {
+  const classes = useStyles();
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>Eri Huynh</p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+      <React.Fragment>
+        <CssBaseline />
+        <Container maxWidth="xl" className={classes.maxWidthLg}>
+          <Router />
+        </Container>
+      </React.Fragment>
+    </BrowserRouter>
   );
-}
+};
 
 export default App;
