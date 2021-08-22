@@ -18,7 +18,7 @@ const App = () => {
   const classes = useStyles();
 
   return (
-    <BrowserRouter>
+    <BrowserRouter basename="/learn-english">
       <React.Fragment>
         <CssBaseline />
         <Container maxWidth="xl" className={classes.maxWidthLg}>
