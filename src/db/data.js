@@ -1,6 +1,6 @@
 export const MINI_TEST_DATA = [
   {
-    id: "1",
+    id: "MT-1",
     name: "Test 1",
     fullAudioURL:
       "https://res.cloudinary.com/erihuynh/video/upload/v1626271158/audio/Very%20Easy%20TOEIC/01-5.mp3",
@@ -23,7 +23,7 @@ export const MINI_TEST_DATA = [
     updatedDate: "28/06/2021",
   },
   {
-    id: "2",
+    id: "MT-2",
     name: "Test 2",
     fullAudioURL:
       "https://res.cloudinary.com/erihuynh/video/upload/v1626271327/audio/Very%20Easy%20TOEIC/02-5.mp3",
@@ -46,7 +46,7 @@ export const MINI_TEST_DATA = [
     updatedDate: "28/06/2021",
   },
   {
-    id: "3",
+    id: "MT-3",
     name: "Test 3",
     fullAudioURL:
       "https://res.cloudinary.com/erihuynh/video/upload/v1626271498/audio/Very%20Easy%20TOEIC/03-05.mp3",
@@ -69,7 +69,7 @@ export const MINI_TEST_DATA = [
     updatedDate: "05/07/2021",
   },
   {
-    id: "4",
+    id: "MT-4",
     name: "Test 4",
     fullAudioURL:
       "https://res.cloudinary.com/erihuynh/video/upload/v1626274199/audio/Very%20Easy%20TOEIC/04-05.mp3",
@@ -92,7 +92,7 @@ export const MINI_TEST_DATA = [
     updatedDate: "14/07/2021",
   },
   {
-    id: "5",
+    id: "MT-5",
     name: "Test 5",
     fullAudioURL:
       "https://res.cloudinary.com/erihuynh/video/upload/v1626584798/audio/Very%20Easy%20TOEIC/05-5.mp3",
@@ -115,7 +115,7 @@ export const MINI_TEST_DATA = [
     updatedDate: "18/07/2021",
   },
   {
-    id: "6",
+    id: "MT-6",
     name: "Test 6",
     fullAudioURL:
       "https://res.cloudinary.com/erihuynh/video/upload/v1627206989/audio/Very%20Easy%20TOEIC/06-5.mp3",
@@ -138,7 +138,7 @@ export const MINI_TEST_DATA = [
     updatedDate: "25/07/2021",
   },
   {
-    id: "7",
+    id: "MT-7",
     name: "Test 7",
     fullAudioURL:
       "https://res.cloudinary.com/erihuynh/video/upload/v1627928081/audio/Very%20Easy%20TOEIC/07-5.mp3",
@@ -164,7 +164,7 @@ export const MINI_TEST_DATA = [
 
 export const DOCUMENT_DATA = [
   {
-    id: "1",
+    id: "D-1",
     name: "Very Easy TOEIC (translated) - Part 1",
     url: "https://drive.google.com/file/d/1k3SQ5vglqgZyGemSCGk0bV9Qiz62VsT4/preview?usp=sharing",
     updatedDate: "14/07/2021",

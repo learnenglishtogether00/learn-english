@@ -10,8 +10,10 @@ import Paper from "@material-ui/core/Paper";
 import Typography from "@material-ui/core/Typography";
 import TableFooter from "@material-ui/core/TableFooter";
 import TablePagination from "@material-ui/core/TablePagination";
+import Chip from "@material-ui/core/Chip";
 
 import TablePaginationActions from "./TablePaginationActions";
+import { checkIsTestComplete } from "../../utils";
 
 const useStyles = makeStyles({
   paperWrap: {
@@ -27,11 +29,15 @@ const useStyles = makeStyles({
   hoverRow: {
     cursor: "pointer",
   },
+  completeChip: {
+    backgroundColor: "#5cb85c",
+    color: "white",
+  },
 });
 
 const DataTable = (props) => {
   const classes = useStyles();
-  const { title, subTitle, headers, rows } = props;
+  const { title, subTitle, headers, rows, handleClickRow } = props;
 
   const [page, setPage] = useState(0);
   const [rowsPerPage, setRowsPerPage] = useState(5);
@@ -49,7 +55,7 @@ const DataTable = (props) => {
   };
 
   const onClickRow = (row) => {
-    console.log({ row });
+    handleClickRow(row);
   };
 
   return (
@@ -70,13 +76,9 @@ const DataTable = (props) => {
             >
               {Array.isArray(headers) &&
                 headers.map((header, index) => (
-                  <TableCell
-                    key={index}
-                    align={index === headers.length - 1 ? "right" : "left"}
-                  >
-                    {header.text}
-                  </TableCell>
+                  <TableCell key={index}>{header.text}</TableCell>
                 ))}
+              <TableCell align={"center"}>Status</TableCell>
             </TableRow>
           </TableHead>
           <TableBody>
@@ -101,15 +103,23 @@ const DataTable = (props) => {
                 >
                   {Array.isArray(headers) &&
                     headers.map((header, index) => (
-                      <TableCell
-                        key={index}
-                        align={index === headers.length - 1 ? "right" : "left"}
-                        component="th"
-                        scope="row"
-                      >
+                      <TableCell key={index} component="th" scope="row">
                         {row[header.key]}
                       </TableCell>
                     ))}
+                  <TableCell align={"center"} component="th" scope="row">
+                    <Chip
+                      size="small"
+                      className={
+                        checkIsTestComplete(row.id) && classes.completeChip
+                      }
+                      label={
+                        checkIsTestComplete(row.id)
+                          ? "hoàn thành"
+                          : "chưa hoàn thành"
+                      }
+                    />
+                  </TableCell>
                 </TableRow>
               ))}
 
