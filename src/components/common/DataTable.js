@@ -18,6 +18,7 @@ import { checkIsTestComplete } from "../../utils";
 const useStyles = makeStyles({
   paperWrap: {
     padding: 30,
+    height: "100%",
   },
   table: {},
   rootHeaderRow: {

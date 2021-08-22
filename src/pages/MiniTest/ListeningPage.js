@@ -10,7 +10,6 @@ import { MINI_TEST_DATA } from "../../db/data";
 import { formatTestData } from "../../utils";
 import DocumentTesting from "../../components/common/TestingComponents/DocumentTesting";
 import AudioTesting from "../../components/common/TestingComponents/AudioTesting";
-import FormTesting from "../../components/common/TestingComponents/FormTesting";
 
 const useStyles = makeStyles({
   homePageLink: {
@@ -32,7 +31,7 @@ const useStyles = makeStyles({
   },
 });
 
-const TestPage = () => {
+const ListeningPage = () => {
   const classes = useStyles();
   let query = useQuery();
   const testId = query.get("test");
@@ -125,4 +124,4 @@ const TestPage = () => {
   );
 };
 
-export default TestPage;
+export default ListeningPage;

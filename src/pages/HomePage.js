@@ -4,6 +4,7 @@ import Typography from "@material-ui/core/Typography";
 
 import { WEB_INFO } from "../db/template";
 import MiniTestTable from "../components/pages/Home/MiniTestTable";
+import DocumentTable from "../components/pages/Home/DocumentTable";
 
 const HomePage = () => {
   return (
@@ -16,10 +17,7 @@ const HomePage = () => {
           <MiniTestTable />
         </Grid>
         <Grid item xs={6}>
-          <MiniTestTable />
-        </Grid>
-        <Grid item xs={6}>
-          <MiniTestTable />
+          <DocumentTable />
         </Grid>
       </Grid>
     </Fragment>

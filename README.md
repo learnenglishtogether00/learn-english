@@ -13,3 +13,7 @@
     - Update Mini Test 8
   - Fix:
     - Error auto format data
+- 4.0:
+  - Implements:
+    - Big update UI
+    - Using single page with ReactJS

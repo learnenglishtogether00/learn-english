@@ -52,7 +52,7 @@ const useStyles = makeStyles({
   },
 });
 
-const MiniTestModalContent = (props) => {
+const DocumentModalContent = (props) => {
   const { testDetail, handleCloseModal } = props;
   const classes = useStyles();
 
@@ -86,13 +86,15 @@ const MiniTestModalContent = (props) => {
         className={classes.cardContainer}
         justifyContent="center"
       >
-        <Grid item xs={4}>
+        <Grid item xs={12}>
           <Card elevation={0} className={classes.cardWrap}>
             <CardContent>
               <Typography className={classes.modeTitle} variant="h6">
-                Mini Test
+                Tài liệu
               </Typography>
-              <Typography variant="subtitle1">Thực hiện bài Test</Typography>
+              <Typography variant="subtitle1">
+                Nhận nút bên dưới để xem tài liệu.
+              </Typography>
 
               <Link to={`/mini-test-exam?test=${testDetail.id}`}>
                 <Typography variant="button" className={classes.actionButton}>
@@ -102,39 +104,8 @@ const MiniTestModalContent = (props) => {
             </CardContent>
           </Card>
         </Grid>
-        <Grid item xs={4}>
-          <Card elevation={0} className={classes.cardWrap}>
-            <CardContent>
-              <Typography variant="h6" className={classes.modeTitle}>
-                Listening Test
-              </Typography>
-              <Typography variant="subtitle1">
-                Rèn luyện Listening Skill
-              </Typography>
-              <Link to={`/mini-test-listening?test=${testDetail.id}`}>
-                <Typography variant="button" className={classes.actionButton}>
-                  Let Go
-                </Typography>
-              </Link>
-            </CardContent>
-          </Card>
-        </Grid>
-        <Grid item xs={4}>
-          <Card elevation={0} className={classes.cardWrap}>
-            <CardContent>
-              <Typography variant="h6" className={classes.modeTitle}>
-                Answer Key
-              </Typography>
-              <Typography variant="subtitle1">Xem đáp án chi tiết</Typography>
-              <Link to={`/mini-test-answer-key?test=${testDetail.id}`}>
-                <Typography variant="button" className={classes.actionButton}>
-                  Let Go
-                </Typography>
-              </Link>
-            </CardContent>
-          </Card>
-        </Grid>
-        <Grid item xs={3}>
+
+        <Grid item xs={12}>
           <Button
             variant="contained"
             className={classes.completeButton}
@@ -149,4 +120,4 @@ const MiniTestModalContent = (props) => {
   );
 };
 
-export default MiniTestModalContent;
+export default DocumentModalContent;
