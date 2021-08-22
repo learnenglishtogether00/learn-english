@@ -28,3 +28,30 @@ export const sortTestDataByDate = (data) => {
       })
     : data;
 };
+
+const formatPdfURL = (pdfURL) => {
+  return pdfURL.replace("/view?usp", "/preview?usp");
+};
+
+const formatFormURL = (formURL) => {
+  return formURL.replace("/edit?usp=sharing", "/viewform?embedded=true");
+};
+
+export const formatTestData = (test) => {
+  const FILTER_PDF_EXAM_KEYS = ["docURL", "answerKeyURL", "transcriptURL"];
+  const FORM_KEY = "formURL";
+
+  let formattedExam = { ...test };
+
+  for (const key in test) {
+    if (FILTER_PDF_EXAM_KEYS.includes(key)) {
+      formattedExam[key] = formatPdfURL(test[key]);
+    }
+
+    if (key === FORM_KEY) {
+      formattedExam[FORM_KEY] = formatFormURL(test[FORM_KEY]);
+    }
+  }
+
+  return formattedExam;
+};

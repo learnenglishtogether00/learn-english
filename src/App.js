@@ -5,7 +5,6 @@ import CssBaseline from "@material-ui/core/CssBaseline";
 import Typography from "@material-ui/core/Typography";
 import Container from "@material-ui/core/Container";
 
-import { WEB_INFO } from "./db/template";
 import Router from "./Route";
 
 const useStyles = makeStyles({
@@ -24,9 +23,6 @@ const App = () => {
       <React.Fragment>
         <CssBaseline />
         <Container maxWidth="xl" className={classes.maxWidthLg}>
-          <Typography variant="h3" component="h4" gutterBottom>
-            {WEB_INFO.webName}
-          </Typography>
           <Router />
         </Container>
       </React.Fragment>
