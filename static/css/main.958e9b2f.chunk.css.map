@@ -1,0 +1,1 @@
+{"version":3,"sources":["webpack://src/index.css"],"names":[],"mappings":"AACA,EACE,oBACF,CAEA,2CACE,YACF","file":"main.958e9b2f.chunk.css","sourcesContent":["/* custom table */\na {\n  text-decoration: none;\n}\n\n.MuiTableRow-root:hover .MuiTableCell-body {\n  color: #800080;\n}\n"]}
