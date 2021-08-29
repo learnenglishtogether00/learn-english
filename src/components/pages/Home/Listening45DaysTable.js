@@ -6,9 +6,9 @@ import Fade from "@material-ui/core/Fade";
 import Paper from "@material-ui/core/Paper";
 
 import DataTable from "../../common/DataTable";
-import MiniTestModalContent from "./MiniTestModalContent";
-import { MINI_TEST_DATA } from "../../../db/data";
-import { sortTestDataByDate } from "../../../utils";
+import Listening45DaysModalContent from "./Listening45DaysModalContent";
+import { LISTENING_45_DAYS_DATA } from "../../../db/data";
+import { sortTestDataByDate, filterTestByUpdatedDate } from "../../../utils";
 
 const HEADERS_DATA = [
   {
@@ -29,12 +29,12 @@ const useStyles = makeStyles({
   },
   paperWrap: {
     padding: 30,
-    width: 800,
+    width: 600,
     border: "none",
   },
 });
 
-const MiniTestTable = () => {
+const Listening45DaysTable = () => {
   const classes = useStyles();
   const [visibleDetailModal, setVisibleDetailModal] = useState(false);
   const [currentRow, setCurrentRow] = useState();
@@ -50,17 +50,18 @@ const MiniTestTable = () => {
   };
 
   const formatData = (data) => {
-    return sortTestDataByDate(data);
+    const filterData = filterTestByUpdatedDate(data);
+    return sortTestDataByDate(filterData);
   };
 
   return (
     <Fragment>
       <DataTable
-        rows={formatData(MINI_TEST_DATA)}
+        rows={formatData(LISTENING_45_DAYS_DATA)}
         headers={HEADERS_DATA}
-        title={"Mini Test"}
+        title={"Listening 45 Days"}
         subTitle={
-          "Mini Test là một dạng đề mô phỏng đề thi TOEIC, với đầy đủ các cấu trúc của bài thi thực tế. Nhưng số lượng câu sẽ ít đi và độ khó ở mức 400-550 điểm."
+          "Đây là khóa học luyện nghe trong vòng 45 ngày, với lộ trình đã được thiết kế sẵn một cách bài bản."
         }
         handleClickRow={handleClickRow}
       />
@@ -79,7 +80,7 @@ const MiniTestTable = () => {
         <Fade in={visibleDetailModal}>
           <Paper elevation={3} classes={{ root: classes.paperWrap }}>
             {currentRow && (
-              <MiniTestModalContent
+              <Listening45DaysModalContent
                 testDetail={currentRow}
                 handleCloseModal={handleCloseModal}
               />
@@ -91,4 +92,4 @@ const MiniTestTable = () => {
   );
 };
 
-export default MiniTestTable;
+export default Listening45DaysTable;

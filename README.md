@@ -17,3 +17,6 @@
   - Implements:
     - Big update UI
     - Using single page with ReactJS
+    - Implement "complete test" feature
+    - Add new course "Listening 45 days"
+    - Add new "Full Test" feature

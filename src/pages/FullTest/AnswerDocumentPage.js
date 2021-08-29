@@ -6,11 +6,9 @@ import { Link } from "react-router-dom";
 import Paper from "@material-ui/core/Paper";
 
 import { useQuery } from "../../utils/customHooks";
-import { MINI_TEST_DATA } from "../../db/data";
+import { FULL_TEST_DATA } from "../../db/data";
 import { formatTestData } from "../../utils";
 import DocumentTesting from "../../components/common/TestingComponents/DocumentTesting";
-import AudioTesting from "../../components/common/TestingComponents/AudioTesting";
-import FormTesting from "../../components/common/TestingComponents/FormTesting";
 
 const useStyles = makeStyles({
   homePageLink: {
@@ -27,20 +25,20 @@ const useStyles = makeStyles({
   },
 });
 
-const TestPage = () => {
+const AnswerDocumentPage = () => {
   const classes = useStyles();
   let query = useQuery();
-  const testId = query.get("test");
+  const testID = query.get("test");
 
-  const currentTest = MINI_TEST_DATA.find((item) => item.id === testId);
+  const currentTest = FULL_TEST_DATA.find((item) => item.id === testID);
   const formattedTest = formatTestData(currentTest);
 
   return (
     <Fragment>
       <Grid container justifyContent="space-between" spacing={3}>
-        <Grid item xs={6}>
+        <Grid item xs={8}>
           <Typography variant="h3" component="h4">
-            {`Mini Test - ${formattedTest.name}`}
+            {`Giải đề chi tiết - ${formattedTest.name}`}
           </Typography>
         </Grid>
         <Grid item xs={1}>
@@ -57,28 +55,19 @@ const TestPage = () => {
       </Grid>
 
       <Grid container justifyContent="space-between" spacing={3}>
-        <Grid item xs={7}>
+        <Grid item xs={9}>
           <Paper elevation={3} classes={{ root: classes.paperWrap }}>
-            <DocumentTesting docURL={formattedTest.docURL} />
+            <DocumentTesting docURL={formattedTest.answerDetailKeyURL} />
           </Paper>
         </Grid>
-        <Grid item xs={5}>
-          <Grid container spacing={3}>
-            <Grid item xs={12}>
-              <Paper elevation={3} classes={{ root: classes.paperWrap }}>
-                <AudioTesting audioURL={formattedTest.fullAudioURL} />
-              </Paper>
-            </Grid>
-            <Grid item xs={12}>
-              <Paper elevation={3} classes={{ root: classes.paperWrap }}>
-                <FormTesting formURL={formattedTest.formURL} />
-              </Paper>
-            </Grid>
-          </Grid>
+        <Grid item xs={3}>
+          <Paper elevation={3} classes={{ root: classes.paperWrap }}>
+            <DocumentTesting docURL={formattedTest.answerKeyURL} />
+          </Paper>
         </Grid>
       </Grid>
     </Fragment>
   );
 };
 
-export default TestPage;
+export default AnswerDocumentPage;
