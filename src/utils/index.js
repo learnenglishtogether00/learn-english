@@ -38,7 +38,12 @@ const formatFormURL = (formURL) => {
 };
 
 export const formatTestData = (test) => {
-  const FILTER_PDF_EXAM_KEYS = ["docURL", "answerKeyURL", "transcriptURL"];
+  const FILTER_PDF_EXAM_KEYS = [
+    "docURL",
+    "answerKeyURL",
+    "transcriptURL",
+    "introURL",
+  ];
   const FORM_KEY = "formURL";
 
   let formattedExam = { ...test };

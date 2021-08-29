@@ -5,6 +5,7 @@ import Typography from "@material-ui/core/Typography";
 import { WEB_INFO } from "../db/template";
 import MiniTestTable from "../components/pages/Home/MiniTestTable";
 import DocumentTable from "../components/pages/Home/DocumentTable";
+import Listening45DaysTable from "../components/pages/Home/Listening45DaysTable";
 
 const HomePage = () => {
   return (
@@ -17,6 +18,9 @@ const HomePage = () => {
           <MiniTestTable />
         </Grid>
         <Grid item xs={6}>
+          <Listening45DaysTable />
+        </Grid>
+        <Grid item xs={8}>
           <DocumentTable />
         </Grid>
       </Grid>
