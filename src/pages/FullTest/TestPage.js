@@ -41,6 +41,9 @@ const useStyles = makeStyles({
   showDisplay: {
     display: "block",
   },
+  hiddenDisplay: {
+    display: "none",
+  },
 });
 
 const TestPage = () => {
@@ -98,9 +101,15 @@ const TestPage = () => {
         </Grid>
         <Grid item xs={5}>
           <Paper elevation={3} classes={{ root: classes.paperWrap }}>
-            {isStarted && !isOver && (
+            <div
+              className={
+                isStarted && !isOver
+                  ? classes.showDisplay
+                  : classes.hiddenDisplay
+              }
+            >
               <FormTesting formURL={formattedTest.formURL} />
-            )}
+            </div>
 
             {!isStarted && !isOver && (
               <Grid
