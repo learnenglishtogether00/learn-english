@@ -6,8 +6,8 @@ import Fade from "@material-ui/core/Fade";
 import Paper from "@material-ui/core/Paper";
 
 import DataTable from "../../common/DataTable";
-import MiniTestModalContent from "./MiniTestModalContent";
-import { MINI_TEST_DATA } from "../../../db/data";
+import FullTestModalContent from "./FullTestModalContent";
+import { FULL_TEST_DATA } from "../../../db/data";
 import { sortTestDataByDate } from "../../../utils";
 
 const HEADERS_DATA = [
@@ -34,7 +34,7 @@ const useStyles = makeStyles({
   },
 });
 
-const MiniTestTable = () => {
+const FullTestTable = () => {
   const classes = useStyles();
   const [visibleDetailModal, setVisibleDetailModal] = useState(false);
   const [currentRow, setCurrentRow] = useState();
@@ -56,11 +56,11 @@ const MiniTestTable = () => {
   return (
     <Fragment>
       <DataTable
-        rows={formatData(MINI_TEST_DATA)}
+        rows={formatData(FULL_TEST_DATA)}
         headers={HEADERS_DATA}
-        title={"Mini Test"}
+        title={"Full Test"}
         subTitle={
-          "Mini Test là một dạng đề mô phỏng đề thi TOEIC, với đầy đủ các cấu trúc của bài thi thực tế. Nhưng số lượng câu sẽ ít đi và độ khó ở mức 400-550 điểm."
+          "Đề thi TOEIC có cấu trúc giống hoàn toàn so với đề thi thực tế"
         }
         handleClickRow={handleClickRow}
       />
@@ -79,7 +79,7 @@ const MiniTestTable = () => {
         <Fade in={visibleDetailModal}>
           <Paper elevation={3} classes={{ root: classes.paperWrap }}>
             {currentRow && (
-              <MiniTestModalContent
+              <FullTestModalContent
                 testDetail={currentRow}
                 handleCloseModal={handleCloseModal}
               />
@@ -91,4 +91,4 @@ const MiniTestTable = () => {
   );
 };
 
-export default MiniTestTable;
+export default FullTestTable;

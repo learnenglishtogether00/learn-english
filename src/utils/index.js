@@ -29,6 +29,22 @@ export const sortTestDataByDate = (data) => {
     : data;
 };
 
+export const filterTestByUpdatedDate = (data) => {
+  const convertStringToDate = (dateStr) => {
+    let [day, month, year] = dateStr.split("/");
+    let formatDateStr = `${year}-${month}-${day}`;
+
+    return new Date(formatDateStr);
+  };
+
+  const filterData = data.filter((item) => {
+    const updateDate = convertStringToDate(item.updatedDate);
+    return updateDate <= new Date();
+  });
+
+  return filterData;
+};
+
 const formatPdfURL = (pdfURL) => {
   return pdfURL.replace("/view?usp", "/preview?usp");
 };
@@ -43,6 +59,8 @@ export const formatTestData = (test) => {
     "answerKeyURL",
     "transcriptURL",
     "introURL",
+    "answerDetailKeyURL",
+    "listenDocURL",
   ];
   const FORM_KEY = "formURL";
 

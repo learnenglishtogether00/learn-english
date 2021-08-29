@@ -4,7 +4,7 @@ import "react-h5-audio-player/lib/styles.css";
 
 const AudioTesting = (props) => {
   const { audioURL } = props;
-  return <AudioPlayer src={audioURL} />;
+  return <AudioPlayer src={audioURL} autoPlay={false} />;
 };
 
 export default AudioTesting;

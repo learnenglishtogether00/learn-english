@@ -29,7 +29,7 @@ const useStyles = makeStyles({
   },
   paperWrap: {
     padding: 30,
-    maxWidth: 500,
+    width: 500,
     border: "none",
   },
 });

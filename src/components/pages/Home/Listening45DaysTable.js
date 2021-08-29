@@ -8,7 +8,7 @@ import Paper from "@material-ui/core/Paper";
 import DataTable from "../../common/DataTable";
 import Listening45DaysModalContent from "./Listening45DaysModalContent";
 import { LISTENING_45_DAYS_DATA } from "../../../db/data";
-import { sortTestDataByDate } from "../../../utils";
+import { sortTestDataByDate, filterTestByUpdatedDate } from "../../../utils";
 
 const HEADERS_DATA = [
   {
@@ -29,7 +29,7 @@ const useStyles = makeStyles({
   },
   paperWrap: {
     padding: 30,
-    maxWidth: 600,
+    width: 600,
     border: "none",
   },
 });
@@ -50,18 +50,7 @@ const Listening45DaysTable = () => {
   };
 
   const formatData = (data) => {
-    const convertStringToDate = (dateStr) => {
-      let [day, month, year] = dateStr.split("/");
-      let formatDateStr = `${year}-${month}-${day}`;
-
-      return new Date(formatDateStr);
-    };
-
-    const filterData = data.filter((item) => {
-      const updateDate = convertStringToDate(item.updatedDate);
-      return updateDate <= new Date();
-    });
-
+    const filterData = filterTestByUpdatedDate(data);
     return sortTestDataByDate(filterData);
   };
 
